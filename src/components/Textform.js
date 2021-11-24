@@ -19,7 +19,7 @@ export default function Textform(props) {
   const [text, setText] = useState("");
   return (
     <>
-      <form>
+      <div>
         <h1>{props.heading}</h1>
         <div className="mb-3">
           <textarea
@@ -38,7 +38,7 @@ export default function Textform(props) {
         <button className="btn btn-primary mx-1" onClick={handelClearClick}>
           Clear
         </button>
-      </form>
+      </div>
       <div className="container my-3">
         <h1>Your text summary</h1>
         <p>
