@@ -19,11 +19,19 @@ export default function Textform(props) {
   const [text, setText] = useState("");
   return (
     <>
-      <div>
+      <div
+        style={{
+          color: props.mode === "dark" ? "white" : "#042743",
+        }}
+      >
         <h1>{props.heading}</h1>
         <div className="mb-3">
           <textarea
             className="form-control"
+            style={{
+              backgroundColor: props.mode === "light" ? "white" : "grey",
+              color: props.mode === "light" ? "#042743" : "white",
+            }}
             value={text}
             onChange={handelOnChange}
             rows="8"
@@ -39,14 +47,23 @@ export default function Textform(props) {
           Clear
         </button>
       </div>
-      <div className="container my-3">
+      <div
+        className="container my-3"
+        style={{
+          color: props.mode === "dark" ? "white" : "#042743",
+        }}
+      >
         <h1>Your text summary</h1>
         <p>
           {text.split(" ").length} words and {text.length} characters.
         </p>
         <p>{0.008 * text.split(" ").length} Minuts read</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>
+          {text.length > 0
+            ? text
+            : "Enter your text in textbox to preview here"}
+        </p>
       </div>
     </>
   );
