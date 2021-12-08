@@ -1,8 +1,9 @@
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light"); //For dark mode
@@ -35,12 +36,20 @@ function App() {
       <Navbar mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3">
-        <Textform
-          showAlert={showAlert}
-          heading="Enter the text to analyze below"
-          mode={mode}
-        />
-        {/* <About /> */}
+        <Routes>
+          <Route exact path="/about" element={<About />}></Route>
+          <Route
+            exact
+            path="/"
+            element={
+              <Textform
+                heading="Enter the text to analyze below"
+                mode={mode}
+                showAlert={showAlert}
+              />
+            }
+          ></Route>
+        </Routes>
       </div>
     </>
   );
