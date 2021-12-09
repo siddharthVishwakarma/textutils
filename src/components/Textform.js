@@ -40,13 +40,16 @@ export default function Textform(props) {
             rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handelUpClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handelUpClick}>
           Convert to uppercase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handelloClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handelloClick}>
           Convert to lowercase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handelClearClick}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          onClick={handelClearClick}
+        >
           Clear
         </button>
       </div>
