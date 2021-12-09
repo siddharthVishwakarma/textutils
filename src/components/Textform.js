@@ -63,7 +63,7 @@ export default function Textform(props) {
         <p>
           {
             text.split(" ").filter((ele) => {
-              return ele.length !== 0;
+              return ele;
             }).length
           }{" "}
           words and {text.length} characters.
