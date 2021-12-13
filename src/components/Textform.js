@@ -71,7 +71,7 @@ export default function Textform(props) {
         <h1>Your text summary</h1>
         <p>
           {
-            text.split(" ").filter((ele) => {
+            text.split(/\s+/).filter((ele) => {
               return ele;
             }).length
           }{" "}
