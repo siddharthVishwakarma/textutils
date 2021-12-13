@@ -75,7 +75,7 @@ export default function Textform(props) {
               return ele;
             }).length
           }{" "}
-          words and {text.length} characters.
+          words and {text.trim().length} characters.
         </p>
         <p>
           {0.008 *
