@@ -40,13 +40,22 @@ export default function Textform(props) {
             rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1 my-1" onClick={handelUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handelUpClick}
+        >
           Convert to uppercase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handelloClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handelloClick}
+        >
           Convert to lowercase
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-1 my-1"
           onClick={handelClearClick}
         >
@@ -76,11 +85,7 @@ export default function Textform(props) {
           Minuts read
         </p>
         <h2>Preview</h2>
-        <p>
-          {text.length > 0
-            ? text
-            : "Enter your text in textbox to preview here"}
-        </p>
+        <p>{text.length > 0 ? text : "Nothing to Preview!!"}</p>
       </div>
     </>
   );
